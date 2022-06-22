@@ -1,0 +1,113 @@
+$textColorHover: rgba(89, 87, 219, 1)
+$nav-elements: 5
+
+=bold-font
+  text-decoration: none 
+  color: rgba(255, 255, 255, 1) 
+  font-style: Montserrat-Bold 
+  font-weight: 700 
+  font-style: normal 
+  font-size: 14px 
+  line-height: 16px 
+  text-transform: uppercase 
+
+=hover-color($hoverColor: true)
+  @if $hoverColor
+    a
+      color: $textColorHover
+      font-family: Montserrat-Bold
+      font-weight: 700
+      font-style: normal
+      font-size: 14px
+      line-height: 16px
+
+.page-nav
+  $background-color: rgba(89, 87, 219, 1)
+  grid-area: nav
+  display: grid
+  grid-template-rows: 1fr auto
+  padding: 0 0 0 30px
+  background-color: $background-color
+
+  &__main-nav
+    list-style: none
+    padding: 0
+    margin: 20px 0 0 0
+    
+    &__item
+      padding: 23px 0 23px 30px
+      display: flex
+      flex-wrap: wrap
+      flex-direction: row
+      align-items: center
+
+      @for $i from 1 through $nav-elements
+        &:nth-child(#{$i})::before
+          content: ''
+          display: inline-block
+          margin: 0 12px 0 0 
+          width: 18px
+          height: 22px
+          background-color: transparent
+          background-repeat: no-repeat
+          background-position: center
+
+        @if $i == 1
+         &:nth-child(#{$i})::before
+           background-image: url("../img/icons/session-inactive.svg")
+        @else if $i == 2
+          &:nth-child(#{$i})::before
+            background-image: url("../img/icons/trailer-inactive.svg")
+        @else if $i == 3
+          &:nth-child(#{$i})::before
+            background-image: url("../img/icons/news-inactive.svg")
+        @else if $i == 4
+          &:nth-child(#{$i})::before
+            background-image: url("../img/icons/aboutUs-inactive.svg")
+        @else if $i == 5
+          &:nth-child(#{$i})::before
+            background-image: url("../img/icons/contacts-inactive.svg")
+
+      @for $i from 1 through $nav-elements
+        &:nth-child(#{$i}):hover
+          background-color: rgba(236, 242, 255, 1)
+          border-radius: 100px 0 0 100px
+          +hover-color($hoverColor:true)
+          transition: 0.2s all
+
+        @if $i == 1
+         &:nth-child(#{$i}):hover::before
+           background-image: url("../img/icons/session-active.svg")
+        @else if $i == 2
+          &:nth-child(#{$i}):hover::before
+            background-image: url("../img/icons/trailer-active.svg")
+        @else if $i == 3
+          &:nth-child(#{$i}):hover::before
+            background-image: url("../img/icons/news-active.svg")
+        @else if $i == 4
+          &:nth-child(#{$i}):hover::before
+            background-image: url("../img/icons/aboutUs-active.svg")
+        @else if $i == 5
+          &:nth-child(#{$i}):hover::before
+            background-image: url("../img/icons/contacts-active.svg")
+
+      &__link
+        +bold-font
+      
+  &__active-user
+    display: flex
+    align-items: center
+    margin: 0 0 50px 30px
+    +bold-font
+    transition: 0.2s all
+
+    &:hover
+      background-color: rgba(236, 242, 255, 1)
+      border-radius: 100px 0 0 100px
+      color: rgba(89, 87, 219, 1)
+      font-family: Montserrat-Bold
+
+    &__picture
+      margin: 0 12px 0 0
+      border-radius: 50%
+       

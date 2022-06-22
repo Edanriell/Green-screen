@@ -1,0 +1,46 @@
+@import "~normalize.css"
+
+@import "./fonts/montserrat"
+
+@import "page-header"
+@import "page-nav"
+@import "page-main"
+@import "page-payment"
+
+$width: 1920px
+$font: 'Montserrat-Regular'
+$font-weight: 700
+$font-size: 16px
+$font-line-height: 16px
+$font-color: rgba(89, 87, 219, 1)
+
+body
+  min-width: $width // later change 100vw
+  font-family: $font
+  font-weight: $font-weight
+  font-style: normal
+  font-size: $font-size
+  line-height: $font-line-height
+  color: $font-color
+
+.container
+  width: $width // later change 100vw
+
+.page
+  display: grid
+  grid-template-areas: "header header" "nav main"
+  grid-template-rows: 80px 1fr
+  grid-template-columns: 260px 1fr
+  min-height: 100vh
+  
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  white-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
