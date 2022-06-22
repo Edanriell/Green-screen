@@ -1,2 +1,2 @@
-# Skincare
-![Skincare](https://github.com/Edanriell/oldProjects-2/blob/master/AnimatedText/skincare.png?raw=true)
+# Green-screen
+![Green-screen](https://github.com/Edanriell/Green-screen/blob/master/greenscreen.png?raw=true)
